@@ -1,4 +1,4 @@
-const { add, subtract } = require('./src/math');
+const { add, subtract } = require('../src/math');
 
 describe('Math Utility Functions', () => {
   test('adds two numbers', () => {
