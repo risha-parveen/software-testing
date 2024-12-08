@@ -98,5 +98,15 @@ describe('isEmpty', () => {
       Custom.prototype.a = 1
       expect(isEmpty(new Custom())).toBe(true)
     })
+
+    test('should handle prototype objects', () => {
+      function TestConstructor() {}
+      const proto = TestConstructor.prototype;
+      expect(isEmpty(proto)).toBe(true);
+      
+      // Add a property to verify it's not empty after adding properties
+      proto.testProp = 'test';
+      expect(isEmpty(proto)).toBe(false);
+    });
   })
 })

@@ -61,6 +61,34 @@ describe('toNumber', () => {
       };
       expect(toNumber(obj)).toBe(3.2);
     });
+
+    test('should handle objects without valueOf', () => {
+      // This case ensures we hit the value.valueOf === 'function' check
+      const objWithoutValueOf = Object.create(null);
+      expect(toNumber(objWithoutValueOf)).toBe(NaN);
+    });
+  });
+
+  describe('direct value conversion', () => {
+    test('should handle non-string numeric conversions', () => {
+      // These cases should hit the typeof value !== 'string' branch
+      const numberLikeObject = {
+        valueOf() { return 42; }
+      };
+      expect(toNumber(numberLikeObject)).toBe(42);
+  
+      // Test the value === 0 condition
+      const zeroObject = {
+        valueOf() { return 0; }
+      };
+      expect(toNumber(zeroObject)).toBe(0);
+  
+      // Test array that converts to empty string and then 0
+      expect(toNumber([])).toBe(0);
+      
+      // Test array that converts to non-zero
+      expect(toNumber([1])).toBe(1);
+    });
   });
 
   describe('edge cases', () => {
