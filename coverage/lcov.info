@@ -1,0 +1,15 @@
+TN:
+SF:src/eq.js
+FN:31,eq
+FNF:1
+FNH:1
+FNDA:41,eq
+DA:32,41
+LF:1
+LH:1
+BRDA:32,0,0,41
+BRDA:32,0,1,15
+BRDA:32,0,2,4
+BRF:3
+BRH:3
+end_of_record
