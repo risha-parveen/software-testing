@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/slice.js</title>
+    <title>Code coverage report for src/reduce.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> slice.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> reduce.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,9 +107,7 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,77 +128,73 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Creates a slice of `array` from `start` up to, but not including, `end`.
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import arrayReduce from './.internal/arrayReduce.js'
+import baseEach from './.internal/baseEach.js'
+import baseReduce from './.internal/baseReduce.js'
+&nbsp;
+/**
+ * Reduces `collection` to a value which is the accumulated result of running
+ * each element in `collection` thru `iteratee`, where each successive
+ * invocation is supplied the return value of the previous. If `accumulator`
+ * is not given, the first element of `collection` is used as the initial
+ * value. The iteratee is invoked with four arguments:
+ * (accumulator, value, index|key, collection).
  *
- * **Note:** This method is used instead of
- * [`Array#slice`](https://mdn.io/Array/slice) to ensure dense arrays are
- * returned.
+ * Many lodash methods are guarded to work as iteratees for methods like
+ * `reduce`, `reduceRight`, and `transform`.
  *
- * @since 3.0.0
- * @category Array
- * @param {Array} array The array to slice.
- * @param {number} [start=0] The start position. A negative index will be treated as an offset from the end.
- * @param {number} [end=array.length] The end position. A negative index will be treated as an offset from the end.
- * @returns {Array} Returns the slice of `array`.
+ * The guarded methods are:
+ * `assign`, `defaults`, `defaultsDeep`, `includes`, `merge`, `orderBy`,
+ * and `sortBy`
+ *
+ * @since 0.1.0
+ * @category Collection
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @param {*} [accumulator] The initial value.
+ * @returns {*} Returns the accumulated value.
+ * @see reduceRight, transform
  * @example
  *
- * var array = [1, 2, 3, 4]
+ * reduce([1, 2], (sum, n) =&gt; sum + n, 0)
+ * // =&gt; 3
  *
- * _.slice(array, 2)
- * // =&gt; [3, 4]
+ * reduce({ 'a': 1, 'b': 2, 'c': 1 }, (result, value, key) =&gt; {
+ *   (result[value] || (result[value] = [])).push(key)
+ *   return result
+ * }, {})
+ * // =&gt; { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
  */
-function <span class="fstat-no" title="function not covered" >slice(</span>array, start, end) {
-  let length = <span class="cstat-no" title="statement not covered" >array == null ? 0 : array.length</span>
-<span class="cstat-no" title="statement not covered" >  if (!length) {</span>
-<span class="cstat-no" title="statement not covered" >    return []</span>
-  }
-<span class="cstat-no" title="statement not covered" >  start = start == null ? 0 : start</span>
-<span class="cstat-no" title="statement not covered" >  end = end === undefined ? length : end</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  if (start &lt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >    start = -start &gt; length ? 0 : (length + start)</span>
-  }
-<span class="cstat-no" title="statement not covered" >  if (end &lt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >    end += length</span>
-  }
-<span class="cstat-no" title="statement not covered" >  length = start &gt; end ? 0 : ((end - start) &gt;&gt;&gt; 0)</span>
-<span class="cstat-no" title="statement not covered" >  start &gt;&gt;&gt;= 0</span>
-&nbsp;
-  let index = <span class="cstat-no" title="statement not covered" >-1</span>
-  const result = <span class="cstat-no" title="statement not covered" >new Array(length)</span>
-<span class="cstat-no" title="statement not covered" >  while (++index &lt; length) {</span>
-<span class="cstat-no" title="statement not covered" >    result[index] = array[index + start]</span>
-  }
-<span class="cstat-no" title="statement not covered" >  return result</span>
+function reduce(collection, iteratee, accumulator) {
+  const func = Array.isArray(collection) ? arrayReduce : baseReduce
+  const initAccum = arguments.length &lt; 3
+  return func(collection, iteratee, accumulator, initAccum, baseEach)
 }
 &nbsp;
-export default slice
+export default reduce
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
