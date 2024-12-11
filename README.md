@@ -25,13 +25,9 @@ cd software-testing
 ```bash
 npm i
 ```
-3. Run the tests after making sure you are in the root directory.
+3. Run the tests along with the coverage report
 ```bash
 npm test
-```
-4. To run the code coverage separately:
-```bash
-npm coverage
 ```
 
 Code coverage for all the builds can be viewed directly at [Coveralls](https://coveralls.io/github/risha-parveen/software-testing)
