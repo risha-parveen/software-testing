@@ -23,11 +23,15 @@ cd software-testing
    ```
 2. Install the node libraries
 ```bash
-npm i
+npm install
 ```
-3. Run the tests along with the coverage report
+3. Run the tests
 ```bash
-npm test
+npm run test
+```
+4. Test coverage
+```bash
+npm run coverage
 ```
 
 Code coverage for all the builds can be viewed directly at [Coveralls](https://coveralls.io/github/risha-parveen/software-testing)
