@@ -1,10 +1,8 @@
 import filter from '../src/filter'
 
 describe('filter', () => {
-  // Test null/undefined array handling
-  test('handles null and undefined arrays', () => {
-    expect(filter(null, x => x)).toEqual([])
-    expect(filter(undefined, x => x)).toEqual([])
+  test('handles filtering out all the values from array', ()=> {
+    expect(filter([1, 2, 3], x => x)).toEqual([1, 2, 3])
   })
 
   // Test basic filtering functionality and predicate arguments
@@ -17,14 +15,12 @@ describe('filter', () => {
       return value % 2 === 0
     })
 
-    // Test predicate arguments
     expect(predicateArgs).toEqual([
       { value: 1, index: 0, arr: array },
       { value: 2, index: 1, arr: array },
       { value: 3, index: 2, arr: array }
     ])
 
-    // Test filtered result
     expect(result).toEqual([2])
   })
 
@@ -38,9 +34,20 @@ describe('filter', () => {
     expect(result).toEqual([{ 'user': 'barney', 'active': true }])
   })
 
-  // Test empty array and no matches
-  test('handles empty array and no matches', () => {
-    expect(filter([], x => x)).toEqual([])
+  test('handles when there are no matches', () => {
+    // 
     expect(filter([1, 2, 3], x => x > 10)).toEqual([])
+  })
+
+  test('handles when an empty array is provided', () => {
+    expect(filter([], x => x)).toEqual([])
+  })
+
+  test('handles null array', () => {
+    expect(filter(null, x => x)).toEqual([])
+  })
+
+  test('handles undefined array', () => {
+    expect(filter(undefined, x => x)).toEqual([])
   })
 })

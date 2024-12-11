@@ -3,10 +3,10 @@ import toNumber from '../src/toNumber';
 describe('toNumber', () => {
   describe('number inputs', () => {
     test('should return numbers unchanged', () => {
-      // Regular numbers - main equivalence class
+      // Regular numbers 
       expect(toNumber(3.2)).toBe(3.2);
       
-      // Special numeric values - boundary cases
+      // Special numeric values 
       expect(toNumber(0)).toBe(0);
       expect(toNumber(Infinity)).toBe(Infinity);
       expect(toNumber(Number.MIN_VALUE)).toBe(5e-324);
@@ -40,7 +40,6 @@ describe('toNumber', () => {
 
   describe('object conversion', () => {
     test('should handle objects with valueOf', () => {
-      // Object with valueOf
       const obj = {
         valueOf: () => 3.2
       };
@@ -63,7 +62,6 @@ describe('toNumber', () => {
     });
 
     test('should handle objects without valueOf', () => {
-      // This case ensures we hit the value.valueOf === 'function' check
       const objWithoutValueOf = Object.create(null);
       expect(toNumber(objWithoutValueOf)).toBe(NaN);
     });
@@ -71,36 +69,26 @@ describe('toNumber', () => {
 
   describe('direct value conversion', () => {
     test('should handle non-string numeric conversions', () => {
-      // These cases should hit the typeof value !== 'string' branch
       const numberLikeObject = {
         valueOf() { return 42; }
       };
       expect(toNumber(numberLikeObject)).toBe(42);
-  
-      // Test the value === 0 condition
+ 
       const zeroObject = {
         valueOf() { return 0; }
       };
       expect(toNumber(zeroObject)).toBe(0);
-  
-      // Test array that converts to empty string and then 0
       expect(toNumber([])).toBe(0);
       
-      // Test array that converts to non-zero
       expect(toNumber([1])).toBe(1);
     });
   });
 
   describe('edge cases', () => {
     test('should handle non-convertible values', () => {
-      // Symbol handling
       expect(toNumber(Symbol('test'))).toBe(NaN);
-
-      // null/undefined handling
       expect(toNumber(null)).toBe(0);
       expect(toNumber(undefined)).toBe(NaN);
-
-      // Invalid string formats
       expect(toNumber('abc')).toBe(NaN);
       expect(toNumber('')).toBe(0);
     });

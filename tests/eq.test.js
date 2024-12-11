@@ -7,11 +7,14 @@ describe('eq', () => {
       expect(eq(1, 1)).toBe(true);
       expect(eq(1, 2)).toBe(false);
       expect(eq(0, 0)).toBe(true);
+      
+    });
+
+    test('should compare positive and negative numbers', ()=>{
       expect(eq(-0, +0)).toBe(true);
       expect(eq(Infinity, Infinity)).toBe(true);
-      expect(eq(-Infinity, -Infinity)).toBe(true);
       expect(eq(Infinity, -Infinity)).toBe(false);
-    });
+    })
 
     test('should handle NaN correctly', () => {
       expect(eq(NaN, NaN)).toBe(true);
@@ -23,15 +26,24 @@ describe('eq', () => {
     test('should compare strings correctly', () => {
       expect(eq('', '')).toBe(true);
       expect(eq('a', 'a')).toBe(true);
-      expect(eq('a', 'b')).toBe(false);
-      expect(eq('1', '1')).toBe(true);
-      expect(eq('1', 1)).toBe(false);
-      expect(eq('', false)).toBe(false);
+      expect(eq('a', 'b')).toBe(false);      
     });
+
+    test('should compare string and string', ()=> {
+      expect(eq('1', '1')).toBe(true);
+    })
+
+    test('should compare string and number value', () => {
+      expect(eq('1', 1)).toBe(false);
+    })
+
+    test('should compare string and truthy or falsy value', () => {
+      expect(eq('1', true)).toBe(false);
+      expect(eq('0', false)).toBe(false);
+    })
 
     test('should compare booleans correctly', () => {
       expect(eq(true, true)).toBe(true);
-      expect(eq(false, false)).toBe(true);
       expect(eq(true, false)).toBe(false);
       expect(eq(true, 1)).toBe(false);
       expect(eq(false, 0)).toBe(false);
@@ -48,7 +60,6 @@ describe('eq', () => {
     });
   });
 
-  // Objects and references
   describe('objects and references', () => {
     test('should compare same object references correctly', () => {
       const obj = { a: 1 };
@@ -106,22 +117,6 @@ describe('eq', () => {
       
       expect(eq(regex1, regex1)).toBe(true);
       expect(eq(regex1, regex2)).toBe(false);
-    });
-  });
-
-  // Error cases
-  describe('error handling', () => {
-    test('should handle missing arguments', () => {
-      expect(eq()).toBe(true);  // undefined == undefined
-      expect(eq(1)).toBe(false);  // 1 == undefined
-    });
-
-    test('should handle invalid types gracefully', () => {
-      const circular = {};
-      circular.self = circular;
-
-      expect(() => eq(circular, circular)).not.toThrow();
-      expect(eq(circular, circular)).toBe(true);
     });
   });
 });

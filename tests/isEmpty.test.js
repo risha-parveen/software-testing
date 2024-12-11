@@ -1,7 +1,6 @@
 import isEmpty from '../src/isEmpty'
 
 describe('isEmpty', () => {
-  // Null and undefined values
   describe('null/undefined values', () => {
     test('should return true for null', () => {
       expect(isEmpty(null)).toBe(true)
@@ -12,7 +11,6 @@ describe('isEmpty', () => {
     })
   })
 
-  // Primitive values
   describe('primitive values', () => {
     test('should return true for boolean values', () => {
       expect(isEmpty(true)).toBe(true)
@@ -61,7 +59,6 @@ describe('isEmpty', () => {
     })
   })
 
-  // Objects and collections
   describe('objects and collections', () => {
     test('should return true for empty objects', () => {
       expect(isEmpty({})).toBe(true)

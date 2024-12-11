@@ -20,8 +20,6 @@ describe('get', () => {
     test('should get value using string path', () => {
       // Basic dot notation
       expect(get(testObject, 'a[0].b.c')).toBe(3);
-      
-      // Array bracket notation
       expect(get(testObject, 'a[1].b.c')).toBe(4);
     });
 
@@ -34,13 +32,14 @@ describe('get', () => {
   describe('edge cases and special values', () => {
     test('should handle null object', () => {
       // null object - special case
-      expect(get(null, 'a.b.c')).toBe(undefined);
+      expect(get(null, 'a[0].b.c')).toBe(undefined);
       expect(get(null, 'a.b.c', 'default')).toBe('default');
     });
 
     test('should handle undefined object', () => {
       // undefined object - special case
-      expect(get(undefined, 'a.b.c')).toBe(undefined);
+      expect(get(undefined, 'a[0].b.c')).toBe(undefined);
+      expect(get(undefined, ['a', '0', 'b', 'c'])).toBe(undefined);
       expect(get(undefined, 'a.b.c', 'default')).toBe('default');
     });
 
@@ -49,7 +48,7 @@ describe('get', () => {
       expect(get(testObject, 'x.y.z')).toBe(null);
       
       // Path through null value
-      expect(get(testObject, 'nullValue.prop')).toBe(undefined);
+      expect(get(testObject, 'nullValue.something')).toBe(undefined);
     });
   });
 
