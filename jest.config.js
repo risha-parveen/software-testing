@@ -1,5 +1,5 @@
 const config = {
-    collectCoverage: true,
+    collectCoverage: false,
     coverageDirectory: "coverage",
     coverageReporters: ["lcov", "text"],
     collectCoverageFrom: [
