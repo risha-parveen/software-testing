@@ -5,13 +5,11 @@ describe('map', () => {
   describe('basic mapping', () => {
     test('should map values using iteratee', () => {
       const square = n => n * n;
-      // Test with simple array - representative of normal case
       expect(map([2, 4], square)).toEqual([4, 16]);
     });
 
     test('should provide correct arguments to iteratee', () => {
       const args = [];
-      // Single element array to capture iteratee arguments
       map(['a'], (value, index, array) => {
         args.push({ value, index, array });
       });
@@ -27,18 +25,15 @@ describe('map', () => {
   // Test edge cases and boundary values
   describe('edge cases', () => {
     test('should handle empty array', () => {
-      // Empty array - boundary case
       expect(map([], x => x * 2)).toEqual([]);
     });
 
     test('should handle null/undefined arrays', () => {
-      // null/undefined - special cases
       expect(map(null, x => x)).toEqual([]);
       expect(map(undefined, x => x)).toEqual([]);
     });
 
     test('should handle array with falsy values', () => {
-      // Array with falsy values - edge case
       const falsyValues = [0, '', false, null, undefined, NaN];
       const result = map(falsyValues, x => typeof x);
       expect(result).toEqual([
@@ -57,13 +52,10 @@ describe('map', () => {
     test('should work with different iteratee types', () => {
       const array = [1, 2];
       
-      // Identity function
       expect(map(array, x => x)).toEqual([1, 2]);
       
-      // Transformation function
       expect(map(array, x => String(x))).toEqual(['1', '2']);
       
-      // Function using index
       expect(map(array, (_, i) => i)).toEqual([0, 1]);
     });
   });
@@ -83,7 +75,6 @@ describe('map', () => {
       const obj = { value: 1 };
       const arr = [obj];
       
-      // Mapping with object reference
       const result = map(arr, x => x);
       expect(result[0]).toBe(obj);
     });

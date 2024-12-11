@@ -42,4 +42,12 @@ describe('filter', () => {
   test('handles when an empty array is provided', () => {
     expect(filter([], x => x)).toEqual([])
   })
+
+  test('handles null array', () => {
+    expect(filter(null, x => x)).toEqual([])
+  })
+
+  test('handles undefined array', () => {
+    expect(filter(undefined, x => x)).toEqual([])
+  })
 })

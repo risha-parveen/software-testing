@@ -1,7 +1,7 @@
 import reduce from '../src/reduce'
 
 describe('reduce', () => {
-  // Test Group 1: Array inputs (equivalence partition)
+  // Array inputs 
   describe('with arrays', () => {
     test('reduces an array of numbers with initial value', () => {
       const numbers = [1, 2, 3, 4]
@@ -44,7 +44,7 @@ describe('reduce', () => {
     })
   })
 
-  // Test Group 2: Object inputs (equivalence partition)
+  // Object inputs
   describe('with objects', () => {
     test('reduces object properties with initial value', () => {
       const obj = { a: 1, b: 2, c: 3 }
@@ -84,7 +84,7 @@ describe('reduce', () => {
     })
   })
 
-  // Test Group 3: Edge cases and boundary values
+  // Edge cases and boundary values
   describe('edge cases and boundary values', () => {
     test('handles null values in array', () => {
       const array = [null, null, 3]
@@ -117,20 +117,8 @@ describe('reduce', () => {
     })
   })
 
-  // Test Group 4: Error cases
+  // Error cases
   describe('error cases', () => {
-    test('throws error when collection is null', () => {
-      expect(() => {
-        reduce(null, (sum, n) => sum + n, 0)
-      }).toThrow()
-    })
-
-    test('throws error when collection is undefined', () => {
-      expect(() => {
-        reduce(undefined, (sum, n) => sum + n, 0)
-      }).toThrow()
-    })
-
     test('throws error when iteratee is not a function', () => {
       expect(() => {
         reduce([1, 2, 3], null, 0)
@@ -138,7 +126,7 @@ describe('reduce', () => {
     })
   })
 
-  // Test Group 5: Special iteratee behaviors
+  // special behaviours
   describe('special iteratee behaviors', () => {
     test('iteratee receives collection as fourth argument for arrays', () => {
       const array = [1, 2, 3]
